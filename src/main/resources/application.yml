@@ -1,0 +1,19 @@
+database: h2
+
+spring:
+    h2:
+        console:
+            enabled: true
+            path: /database/h2
+    datasource:
+        url: jdbc:${database}:file:./.datasources/persona-api
+        username: dbuser
+        password:
+        driver-class-name: org.h2.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    output:
+        ansi:
+            enabled: always
