@@ -6,7 +6,7 @@ spring:
             enabled: true
             path: /database/h2
     datasource:
-        url: jdbc:${database}:file:./.datasources/persona-api
+        url: jdbc:${database}:file:./.datasources/checkpoint-api
         username: dbuser
         password:
         driver-class-name: org.h2.Driver
