@@ -1,11 +1,12 @@
 package io.schuberty.dio.checkpointapi.model.checkpoint;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,6 +25,16 @@ public class Movement {
     @EmbeddedId
     private MovementId id;
 
+    private LocalDateTime entryDate;
+
+    private LocalDateTime exitDate;
+
+    private BigDecimal period;
+
+    private Occurrence occurrence;
+
+    private Calendar calendar;
+
     @Getter
     @Setter
     @AllArgsConstructor
@@ -32,6 +43,6 @@ public class Movement {
     public static class MovementId implements Serializable {
 
         private Long movementId;
-        private Long userId
+        private Long userId;
     }
 }
