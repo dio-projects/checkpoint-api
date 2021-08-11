@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,6 +41,7 @@ public class Movement {
 
     @Getter
     @Setter
+    @EqualsAndHashCode
     @AllArgsConstructor
     @NoArgsConstructor
     @Embeddable
