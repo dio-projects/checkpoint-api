@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import io.schuberty.dio.checkpointapi.enums.PhoneType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,7 +29,7 @@ public class Phone {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private io.schuberty.dio.checkpointapi.enums.PhoneType type;
+    private PhoneType type;
 
     @Column(nullable = false)
     private String number;

@@ -1,5 +1,7 @@
 package io.schuberty.dio.checkpointapi.model.checkpoint;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,5 +39,5 @@ public class Company {
     private String state;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    private Phone phone;
+    private List<Phone> phones;
 }
