@@ -21,37 +21,37 @@ import io.schuberty.dio.checkpointapi.system.service.WorkJourneyService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/v1/journey")
+@RequestMapping(value = "/api/v1/journey")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class WorkJourneyController {
 
     private WorkJourneyService journeyService;
 
-    @PostMapping("")
+    @PostMapping(value = "")
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO createJourney(@RequestBody WorkJourney journey) {
         return this.journeyService.create(journey);
     }
 
-    @GetMapping("")
+    @GetMapping(value = "")
     @ResponseStatus(HttpStatus.OK)
     public List<WorkJourney> listAll() {
         return this.journeyService.listAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public WorkJourney findById(@PathVariable("id") Long id) throws JourneyNotFoundException {
         return this.journeyService.findById(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody WorkJourney journey) throws JourneyNotFoundException {
         return this.journeyService.updateById(id, journey);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws JourneyNotFoundException {
         return this.journeyService.delete(id);
