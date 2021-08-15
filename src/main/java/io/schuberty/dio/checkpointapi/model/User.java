@@ -9,10 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.envers.Audited;
+
 import io.schuberty.dio.checkpointapi.model.checkpoint.AccessLevel;
 import io.schuberty.dio.checkpointapi.model.checkpoint.Company;
-import io.schuberty.dio.checkpointapi.model.checkpoint.WorkJourney;
 import io.schuberty.dio.checkpointapi.model.checkpoint.UserCategory;
+import io.schuberty.dio.checkpointapi.model.checkpoint.WorkJourney;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,16 +27,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Audited
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     @ManyToOne
     private UserCategory userCategory;
-
-    private String name;
 
     @ManyToOne
     private Company company;
