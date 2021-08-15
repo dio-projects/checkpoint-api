@@ -40,6 +40,5 @@ public class Locality {
 
         private Long localityId;
         private Long accessLevelId;
-
     }
 }
