@@ -3,11 +3,12 @@
 - [ ] Research if it's worth to add MapStruct.
 - [ ] Research if it's worth to add DTOs to models.
 - [ ] Create controller and audit the following models:
-  - [x] Bank Hours;
+  - [x] Work Journey;
+  - [ ] Bank Hours;
   - [ ] User;
   - [ ] Movement
   - [ ] Calendar;
-  - [ ] Locality;
+  - [ ] Locality.
 - [ ] Create all services;
 - [ ] Create tests. (WIP)
 
