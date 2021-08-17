@@ -20,7 +20,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Audited
-public class DataType {
+public class DateType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

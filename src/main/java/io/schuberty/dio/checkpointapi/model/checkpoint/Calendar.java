@@ -30,7 +30,7 @@ public class Calendar {
     private Long id;
 
     @ManyToOne
-    private DataType dataType;
+    private DateType dataType;
 
     private String description;
 
