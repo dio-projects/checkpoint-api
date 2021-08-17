@@ -2,7 +2,7 @@ package io.schuberty.dio.checkpointapi.model.checkpoint;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
@@ -27,9 +27,9 @@ public class Movement {
     @EmbeddedId
     private MovementId id;
 
-    private LocalDateTime entryDate;
+    private LocalDate entryDate;
 
-    private LocalDateTime exitDate;
+    private LocalDate exitDate;
 
     private BigDecimal period;
 

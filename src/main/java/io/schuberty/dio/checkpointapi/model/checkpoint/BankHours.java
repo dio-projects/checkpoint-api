@@ -2,7 +2,7 @@ package io.schuberty.dio.checkpointapi.model.checkpoint;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
@@ -26,7 +26,7 @@ public class BankHours {
     @EmbeddedId
     private BankHoursId id;
 
-    private LocalDateTime dateWorked;
+    private LocalDate dateWorked;
 
     private BigDecimal amountHoursWorked;
 
