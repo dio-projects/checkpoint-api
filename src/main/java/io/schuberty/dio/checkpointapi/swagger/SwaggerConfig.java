@@ -40,9 +40,9 @@ public class SwaggerConfig {
             .title("Checkpoint API")
             .description("")
             .version("0.0.3")
-            .license("Apache License Version 2.0")  
+            .license("Apache License Version 2.0")
             .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-            .contact(new Contact("Schubert", "https://github.com/schuberty/", "gschubertyh@gmail.com"))
+            .contact(new Contact("Schubert", "https://github.com/schuberty/", ""))
             .build();
     }
 }
