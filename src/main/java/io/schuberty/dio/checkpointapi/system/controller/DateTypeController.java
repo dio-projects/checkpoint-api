@@ -28,35 +28,35 @@ public class DateTypeController {
 
     private DateTypeService dateTypeService;
 
-    @ApiOperation(value = "Create a dateType and returns its ID")
+    @ApiOperation(value = "Create a date type and returns its ID")
     @PostMapping(value = "")
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO createDateType(@RequestBody DateType dateType) {
         return this.dateTypeService.create(dateType);
     }
 
-    @ApiOperation(value = "Return all dateTypes")
+    @ApiOperation(value = "Return all date types")
     @GetMapping(value = "")
     @ResponseStatus(HttpStatus.OK)
     public List<DateType> listAll() {
         return this.dateTypeService.listAll();
     }
 
-    @ApiOperation(value = "Return a dateType by giving an ID")
+    @ApiOperation(value = "Return a date type by giving an ID")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public DateType findById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.dateTypeService.findById(id);
     }
 
-    @ApiOperation(value = "Update a dateType by giving an ID")
+    @ApiOperation(value = "Update a date type by giving an ID")
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody DateType dateType) throws EntityNotFoundException {
         return this.dateTypeService.updateById(id, dateType);
     }
 
-    @ApiOperation(value = "Delete a dateType by giving an ID")
+    @ApiOperation(value = "Delete a date type by giving an ID")
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws EntityNotFoundException {

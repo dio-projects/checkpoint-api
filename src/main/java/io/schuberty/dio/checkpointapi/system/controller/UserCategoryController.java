@@ -17,7 +17,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping(value = "/api/v1/usercategory")
+@RequestMapping(value = "/api/v1/user-category")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class UserCategoryController {
 
