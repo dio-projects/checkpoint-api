@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.schuberty.dio.checkpointapi.exception.UserNotFoundException;
+import io.schuberty.dio.checkpointapi.exception.EntityNotFoundException;
 import io.schuberty.dio.checkpointapi.model.User;
 import io.schuberty.dio.checkpointapi.system.dto.response.MessageResponseDTO;
 import io.schuberty.dio.checkpointapi.system.service.UserService;
@@ -45,21 +45,21 @@ public class UserController {
     @ApiOperation(value = "Return a user by giving an ID")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User findById(@PathVariable("id") Long id) throws UserNotFoundException {
+    public User findById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.userService.findById(id);
     }
 
     @ApiOperation(value = "Update a user by giving an ID")
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody User user) throws UserNotFoundException {
+    public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody User user) throws EntityNotFoundException {
         return this.userService.updateById(id, user);
     }
 
     @ApiOperation(value = "Delete a user by giving an ID")
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws UserNotFoundException {
+    public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.userService.delete(id);
     }
 }

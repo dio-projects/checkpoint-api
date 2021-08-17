@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.schuberty.dio.checkpointapi.exception.JourneyNotFoundException;
+import io.schuberty.dio.checkpointapi.exception.EntityNotFoundException;
 import io.schuberty.dio.checkpointapi.model.checkpoint.WorkJourney;
 import io.schuberty.dio.checkpointapi.system.dto.response.MessageResponseDTO;
 import io.schuberty.dio.checkpointapi.system.repository.WorkJourneyRepository;
@@ -27,25 +27,25 @@ public class WorkJourneyService {
         return this.journeyRepository.findAll();
     }
 
-    public WorkJourney findById(Long id) throws JourneyNotFoundException {
+    public WorkJourney findById(Long id) throws EntityNotFoundException {
         WorkJourney journey = verifyIfExists(id);
         return journey;
     }
 
-    public MessageResponseDTO updateById(Long id, WorkJourney journey) throws JourneyNotFoundException {
+    public MessageResponseDTO updateById(Long id, WorkJourney journey) throws EntityNotFoundException {
         verifyIfExists(id);
         WorkJourney updatedJourney = this.journeyRepository.save(journey);
         return MessageResponse.create("Updated journey with ID " + updatedJourney.getId());
     } 
 
-    public MessageResponseDTO delete(Long id) throws JourneyNotFoundException {
+    public MessageResponseDTO delete(Long id) throws EntityNotFoundException {
         verifyIfExists(id);
         this.journeyRepository.deleteById(id);
         return MessageResponse.create("Deleted journey with ID " + id);
     }
 
-    private WorkJourney verifyIfExists(Long id) throws JourneyNotFoundException {
+    private WorkJourney verifyIfExists(Long id) throws EntityNotFoundException {
         return this.journeyRepository.findById(id)
-            .orElseThrow(() -> new JourneyNotFoundException(id));
+            .orElseThrow(() -> new EntityNotFoundException("Work Journey", id));
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.schuberty.dio.checkpointapi.exception.AccessNotFoundException;
+import io.schuberty.dio.checkpointapi.exception.EntityNotFoundException;
 import io.schuberty.dio.checkpointapi.model.checkpoint.AccessLevel;
 import io.schuberty.dio.checkpointapi.system.service.AccessLevelService;
 import io.swagger.annotations.ApiOperation;
@@ -33,7 +33,7 @@ public class AccessLevelController {
     @ApiOperation(value = "Return a access level by giving an ID")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public AccessLevel findById(@PathVariable("id") Long id) throws AccessNotFoundException {
+    public AccessLevel findById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.accessLevelService.findById(id);
     }
 }

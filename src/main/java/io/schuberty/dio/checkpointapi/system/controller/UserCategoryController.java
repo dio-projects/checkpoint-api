@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.schuberty.dio.checkpointapi.exception.CategoryNotFoundException;
+import io.schuberty.dio.checkpointapi.exception.EntityNotFoundException;
 import io.schuberty.dio.checkpointapi.model.checkpoint.UserCategory;
 import io.schuberty.dio.checkpointapi.system.service.UserCategoryService;
 import io.swagger.annotations.ApiOperation;
@@ -33,7 +33,7 @@ public class UserCategoryController {
     @ApiOperation(value = "Return a user category by giving an ID")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public UserCategory findById(@PathVariable("id") Long id) throws CategoryNotFoundException {
+    public UserCategory findById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.categoryService.findById(id);
     }
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.schuberty.dio.checkpointapi.exception.CompanyNotFoundException;
+import io.schuberty.dio.checkpointapi.exception.EntityNotFoundException;
 import io.schuberty.dio.checkpointapi.model.checkpoint.Company;
 import io.schuberty.dio.checkpointapi.system.dto.response.MessageResponseDTO;
 import io.schuberty.dio.checkpointapi.system.service.CompanyService;
@@ -45,21 +45,21 @@ public class CompanyController {
     @ApiOperation(value = "Return a company by giving an ID")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Company findById(@PathVariable("id") Long id) throws CompanyNotFoundException {
+    public Company findById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.companyService.findById(id);
     }
 
     @ApiOperation(value = "Update a company by giving an ID")
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody Company company) throws CompanyNotFoundException {
+    public MessageResponseDTO updateById(@PathVariable("id") Long id, @RequestBody Company company) throws EntityNotFoundException {
         return this.companyService.updateById(id, company);
     }
 
     @ApiOperation(value = "Delete a company by giving an ID")
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws CompanyNotFoundException {
+    public MessageResponseDTO deleteById(@PathVariable("id") Long id) throws EntityNotFoundException {
         return this.companyService.delete(id);
     }
 }

@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class CategoryNotFoundException extends Exception {
+public class EntityNotFoundException extends Exception {
 
-    public CategoryNotFoundException(Long id) {
-        super("User Category not found with ID " + id);
+    public EntityNotFoundException(String entityName, Long id) {
+        super(entityName + " not found with ID " + id);
     }
 }
