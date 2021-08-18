@@ -1,4 +1,6 @@
 spring:
+    banner:
+        location: classpath:banner.txt
     h2:
         console:
             enabled: true
