@@ -47,8 +47,6 @@ spring:
         password:
 ```
 
-O banco de dados H2 é inicializado com alguns dados iniciais que podem ser verificados a partir do Swagger ou acessando o arquivo [data.sql](src/main/resources/db/h2/data.sql).
-
 The H2 database is initialized with some initial data that can be checked with Swagger or by accessing the [data.sql](src/main/resources/db/h2/data.sql) file.
 
 [java-src]: https://img.shields.io/badge/java-11-orange
