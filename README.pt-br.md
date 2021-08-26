@@ -8,7 +8,7 @@
 [![Latest Commit][commit-src]][commit-href]
 [![License][license-src]][license-href]
 
-#### CheckpointAPI é um projeto desenvolvido com Spring Boot, para um Bootcamp da [Digital Innovation One](https://digitalinnovation.one/), com o objetivo de (WIP).
+#### CheckpointAPI é um projeto desenvolvido com Spring Boot, Hibernate Envers, Lombok e Swagger para um Bootcamp da [Digital Innovation One](https://digitalinnovation.one/), com o objetivo de desenvolver uma API Rest para controle de ponto e acesso de usuários de uma empresa.
 
 </div>
 
